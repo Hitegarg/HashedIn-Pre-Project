@@ -29,6 +29,7 @@ public class UserController {
     public void deleteCredentials(@PathVariable(value = "username") String username) {
         userService.deleteCredentials(username);
     }
+
     @GetMapping("/credentials/{username}")
     public UserCredentials getUser(@PathVariable(value = "username") String username){
         return userService.getUser(username);
@@ -38,15 +39,16 @@ public class UserController {
     public String contactUs(){
         return "Contact Us page";
     }
+
     @GetMapping("/dashboard")
     public String faq(){
         return "This is Dashboard page which is only visible for authenticated users";
     }
 
-//
-@PutMapping("/credentials")
-public UserCredentials updateCredentials(@RequestBody UserCredentials userCredentials){
-    return userService.updateUserCredentials(userCredentials);
-}
+
+    @PutMapping("/credentials")
+    public UserCredentials updateCredentials(@RequestBody UserCredentials userCredentials){
+        return userService.updateUserCredentials(userCredentials);
+    }
 
 }

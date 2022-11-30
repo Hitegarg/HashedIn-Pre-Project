@@ -14,10 +14,13 @@ public class JwtController {
 
     @Autowired
     CustomUserDetailsService customUserDetailsService;
+
     @Autowired
     JwtService jwtService;
+
     @Autowired
     AuthenticationManager authenticationManager;
+
     @RequestMapping(value = "/token",method = RequestMethod.POST)
     public String generateToken(@RequestBody JwtRequest jwtRequest) throws Exception {
         System.out.println("Entered into body");

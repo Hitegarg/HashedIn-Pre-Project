@@ -1,5 +1,5 @@
 package com.example.conVRsationalAI.Common;
 
-public enum GENDER {
+public enum Gender {
     MALE,FEMALE
 }
