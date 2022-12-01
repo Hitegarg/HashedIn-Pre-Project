@@ -36,6 +36,18 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/credentials").permitAll()
                 .antMatchers("/user/credentials/*").permitAll()
                 //.antMatchers("/welcome").permitAll()
+                .antMatchers("/size").permitAll()
+//.antMatchers("/welcome").permitAll()
+                .antMatchers("/size/*").permitAll()
+                .antMatchers("/colour/*").permitAll()
+                .antMatchers("/colour").permitAll()
+                .antMatchers("/product").permitAll()
+                .antMatchers("/product/*").permitAll()
+                .antMatchers("/review/*").permitAll()
+                .antMatchers("/review/*/*").permitAll()
+                .antMatchers("/cart/*").permitAll()
+                .antMatchers("/cart/*/*").permitAll()
+
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

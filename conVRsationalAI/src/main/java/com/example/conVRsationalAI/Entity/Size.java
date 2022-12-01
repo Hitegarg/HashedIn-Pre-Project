@@ -14,7 +14,7 @@ public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int size_id;
-    int size_name;
+    String sizename;
     Date created_date;
     String created_by;
     Date modified_date;

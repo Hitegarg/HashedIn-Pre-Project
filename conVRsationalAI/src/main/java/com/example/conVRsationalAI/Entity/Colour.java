@@ -13,7 +13,7 @@ public class Colour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int colour_id;
-    int colour_name;
+    String colourname;
     Date created_date;
     String created_by;
     Date modified_date;

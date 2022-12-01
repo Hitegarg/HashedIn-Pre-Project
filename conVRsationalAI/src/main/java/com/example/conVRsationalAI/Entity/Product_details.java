@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 import java.util.Set;
 @Data
 @Entity
@@ -25,4 +26,7 @@ public class Product_details {
     String created_by;
     Date modified_date;
     String modified_by;
+
+
+
 }
