@@ -27,5 +27,9 @@ public class ProductController {
         return productService.getProduct(category);
     }
 
+//    @GetMapping("/colour/{colour}")
+//    public void getProductByColour(@PathVariable(value = "colour") String colour){
+//        productService.searchOnColour(colour);
+//    }
 
 }

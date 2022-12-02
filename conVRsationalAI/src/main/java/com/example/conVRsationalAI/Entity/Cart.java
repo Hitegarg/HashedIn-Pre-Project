@@ -15,10 +15,9 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cartid;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private UserCredentials userCredentials;
-   // @OneToMany(cascade = CascadeType.ALL)
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     Set<Product_details> cart_items;
     Double total_amount;
     Date created_date;

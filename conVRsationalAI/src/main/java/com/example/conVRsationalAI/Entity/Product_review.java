@@ -13,9 +13,9 @@ public class Product_review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int review_id;
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne
     private Product_details product_details;
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne
     private UserCredentials userCredentials;
     String content;
     Date created_date;

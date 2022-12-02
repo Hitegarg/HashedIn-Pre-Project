@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface ColourRepository extends JpaRepository<Colour,Integer> {
     Colour findByColourname(String colour_name);
 
+
 }

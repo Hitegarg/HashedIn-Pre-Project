@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 @Data
@@ -13,9 +14,9 @@ public class Product_details {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int product_id;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     Set<Size> sizes;
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     Set<Colour> colours;
     String fabric_type;
     String category;
@@ -26,7 +27,5 @@ public class Product_details {
     String created_by;
     Date modified_date;
     String modified_by;
-
-
 
 }
