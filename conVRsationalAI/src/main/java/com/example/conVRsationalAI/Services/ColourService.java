@@ -14,10 +14,10 @@ public class ColourService {
     @Autowired
     ColourRepository colourRepository;
     public Colour insertColour(Colour colour) {
-        colour.setCreated_by("Admin");
-        colour.setCreated_date(Date.valueOf("2022-04-23"));
-        colour.setModified_date(Date.valueOf("2022-04-23"));
-        colour.setModified_by("Admin");
+//        colour.setCreated_by("Admin");
+//        colour.setCreated_date(Date.valueOf("2022-04-23"));
+//        colour.setModified_date(Date.valueOf("2022-04-23"));
+//        colour.setModified_by("Admin");
         return colourRepository.save(colour);
     }
     public Colour getColour(String name){
