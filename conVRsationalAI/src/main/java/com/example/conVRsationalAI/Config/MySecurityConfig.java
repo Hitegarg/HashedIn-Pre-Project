@@ -43,6 +43,21 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/colour").permitAll()
                 .antMatchers("/product").permitAll()
                 .antMatchers("/product/*").permitAll()
+                .antMatchers("/user/updateReview/*").permitAll()
+                .antMatchers("/products/*").permitAll()
+                .antMatchers("/get_by_colourname/*").permitAll()
+                .antMatchers("/get_by_colourid/*").permitAll()
+                .antMatchers("/get_by_sizename/*").permitAll()
+                .antMatchers("/get_by_sizeid/*").permitAll()
+                .antMatchers("/get_by_colournameandsizename/*/*").permitAll()
+                .antMatchers("/get_by_colournameandsizenameandcategory/*/*/*").permitAll()
+                .antMatchers("/get_by_colournameandsizenameandcategoryandfabrictype/*/*/*/*").permitAll()
+                .antMatchers("/get_by_colournameandcategory/*/*").permitAll()
+                .antMatchers("/get_by_sizenameandcategory/*/*").permitAll()
+                .antMatchers("/get_by_fabrictypeandcategory/*/*").permitAll()
+
+
+
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

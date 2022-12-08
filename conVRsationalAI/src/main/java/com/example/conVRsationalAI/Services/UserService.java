@@ -40,18 +40,23 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public UserCredentials updateUserCredentials(UserCredentials userCredentials){
-        Optional<UserCredentials> credentials=userRepository.findById(userRepository.findByUsername(userCredentials.getUsername()).getId());
-        if(credentials.isEmpty()){
-            return new UserCredentials();
-        }
-//        long user_id = userCredentials.getId();
-        userRepository.deleteById(userRepository.findByUsername(userCredentials.getUsername()).getId());
-        UserCredentials newuser=credentials.get();
-        newuser.setPassword(userCredentials.getPassword());
-        newuser.setName(userCredentials.getName());
-//        newuser.setId(user_id);
-        return userRepository.save(newuser);
+//    public UserCredentials updateUserCredentials(UserCredentials userCredentials){
+//        Optional<UserCredentials> credentials=userRepository.findById(userRepository.findByUsername(userCredentials.getUsername()).getId());
+//        if(credentials.isEmpty()){
+//            return new UserCredentials();
+//        }
+////        long user_id = userCredentials.getId();
+//        userRepository.deleteById(userRepository.findByUsername(userCredentials.getUsername()).getId());
+//        UserCredentials newuser=credentials.get();
+//        newuser.setPassword(userCredentials.getPassword());
+//        newuser.setName(userCredentials.getName());
+////        newuser.setId(user_id);
+//        return userRepository.save(newuser);
+//    }
+    public UserCredentials updateUserCredentials(long id , UserCredentials userCredentials){
+        UserCredentials credentials = userRepository.findById(id);
+        credentials.setPassword(userCredentials.getPassword());
+        return userRepository.save(credentials);
     }
 
 }

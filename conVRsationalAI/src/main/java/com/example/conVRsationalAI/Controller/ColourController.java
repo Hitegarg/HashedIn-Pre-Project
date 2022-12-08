@@ -25,4 +25,8 @@ public class ColourController {
     public Colour getColour(@PathVariable(value = "colour_name") String colour_name){
         return colourService.getColour(colour_name);
     }
+    @PutMapping("/colour/{colourid}")
+    public Colour updateColour(@RequestBody Colour colour , @PathVariable(value = "colourid") int colourid){
+        return colourService.updateColour(colourid,colour);
+    }
 }

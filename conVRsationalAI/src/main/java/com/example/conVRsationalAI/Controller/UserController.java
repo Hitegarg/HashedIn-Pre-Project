@@ -44,9 +44,13 @@ public class UserController {
     }
 
 //
-@PutMapping("/credentials")
-public UserCredentials updateCredentials(@RequestBody UserCredentials userCredentials){
-    return userService.updateUserCredentials(userCredentials);
-}
+//@PutMapping("/credentials/{id}")
+//public UserCredentials updateReview(@RequestBody UserCredentials userCredentials){
+//    return userService.updateUserCredentials(userCredentials);
+//}
 
+    @PutMapping("/credentials/{userid}")
+    public UserCredentials updateUserCredentials(@RequestBody UserCredentials userCredentials , @PathVariable(value = "userid") long userid){
+        return userService.updateUserCredentials(userid,userCredentials);
+    }
 }

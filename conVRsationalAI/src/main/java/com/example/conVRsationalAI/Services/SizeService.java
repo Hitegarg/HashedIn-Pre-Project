@@ -2,6 +2,7 @@ package com.example.conVRsationalAI.Services;
 
 import com.example.conVRsationalAI.Entity.Colour;
 import com.example.conVRsationalAI.Entity.Size;
+import com.example.conVRsationalAI.Entity.UserCredentials;
 import com.example.conVRsationalAI.Repository.ColourRepository;
 import com.example.conVRsationalAI.Repository.SizeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,12 @@ public class SizeService {
     public List<Size> getAll() {
         return sizeRepository.findAll();
     }
+    public Size updateSize(int size_id , Size size){
+        Size newsize = sizeRepository.findBySizeid(size_id);
+        newsize.setSizename(size.getSizename());
+        return sizeRepository.save(newsize);
+    }
+//    public String search(String sizename){
+//
+//    }
 }

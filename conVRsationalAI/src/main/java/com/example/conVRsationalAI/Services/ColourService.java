@@ -1,6 +1,7 @@
 package com.example.conVRsationalAI.Services;
 
 import com.example.conVRsationalAI.Entity.Colour;
+import com.example.conVRsationalAI.Entity.Size;
 import com.example.conVRsationalAI.Entity.UserCredentials;
 import com.example.conVRsationalAI.Repository.ColourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +28,10 @@ public class ColourService {
 
         return colourRepository.findAll();
     }
+    public Colour updateColour(int colourid , Colour colour){
+        Colour newcolour = colourRepository.findByColourid(colourid);
+        newcolour.setColourname(colour.getColourname());
+        return colourRepository.save(newcolour);
+    }
+
 }
